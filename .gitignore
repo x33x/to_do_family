@@ -1,3 +1,6 @@
+# file using for searching in Mac OS
+.DS_Store
+
 # Compiled Python files
 __pycache__/
 *.pyc
