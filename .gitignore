@@ -1,3 +1,34 @@
+# Compiled Python files
+__pycache__/
+*.pyc
+*.pyo
+
+# Local development settings
+*.sqlite3
+*.db
+
+# Secret key
+secret_key.txt
+
+# Virtual environment
+venv/
+env/
+*.env
+
+# IDE-specific files and directories
+.vscode/
+.idea/
+
+# Log files
+*.log
+
+# Media and static files (should be handled by collectstatic)
+media/
+static/
+
+# Compiled CSS and JavaScript
+*.css.map
+*.js.map
 # Ignore virtual environment folders
 # venv/
 # env/
