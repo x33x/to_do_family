@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+
+    <title>{% block title %}ToDo Family{% endblock %}</title>
+    <!-- Add Bootstrap CSS link -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <header><h2>Welcome to MyToDoFamily</h2></header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <nav>
+        <ul>
+            {% if not user.is_authenticated %}
+            <li><a href="{% url 'signin' %}">Login</a></li>
+            <li><a href="{% url 'signup' %}">Signup</a></li>
+            {% endif %}
+            {% if user.is_authenticated %}
+            <li><a href="{% url 'mytodo' %}">MyToDo</a></li>
+            <li><a href="{% url 'logout' %}">Logout</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+    <footer>
+        {% block footer %}<p>&copy; 2023 ToDo Family</p>{% endblock %}
+    </footer>
+
+    <!-- Add Bootstrap JavaScript and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
