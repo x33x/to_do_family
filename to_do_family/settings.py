@@ -112,6 +112,7 @@ AUTH_USER_MODEL = 'signup.UserProfile'
 
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
+    'authcustom.auth_backend.EmailAuth'
 ]
 
 LOGOUT_REDIRECT_URL = 'signin'

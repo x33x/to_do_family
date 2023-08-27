@@ -10,14 +10,10 @@ def signup(request):
         form = SignupForm(request.POST)
         if form.is_valid():
             sign_up = form.save(commit=False)
-            print('Before make_pass')
-            print(sign_up)
             sign_up.password = make_password(form.cleaned_data['password'])
-            print('After make_pass')
-            print(sign_up)
-            sign_up.save() # Save the form data to the database
-            return redirect('signin')  # Redirect to the signin page after successful signup
+            sign_up.save()  # Save the form data to the database
             print('Signup successfully created')
+            return redirect('signin')  # Redirect to the signin page after successful signup
     else:
         form = SignupForm()
 
